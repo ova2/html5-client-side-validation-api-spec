@@ -4,7 +4,7 @@
 Handlebars templates http://handlebarsjs.com/, pre-compiled templates for Bootstrap messages, PrimeUI messages, AlertifyJS, and some other
 
 Validation messages can be created on failed validation in two ways
-- Within any explicit defined empty container elements, such as <div data-csv-msgname="..." data-csv-template="..."></div>
+- Within any explicit defined empty container elements, such as <pre><code>&lt;div data-csv-msgname=&quot;...&quot; data-csv-template=&quot;...&quot;&gt;&lt;/div&gt;</code></pre>
  - data-csv-msgname an unique name of the messages container
  - data-csv-template - an optional attribut with a name of the pre-defined template
 - Dynamically without explicit defined empty container elements
@@ -26,6 +26,6 @@ Validation messages can be created on failed validation in two ways
  - value provider - script or JS function which returns the value to be validated
  
 ## ClientBehavior
-- <s:csv process="@(...)" data-csv-msgname="..." onfail="..."/>
+<pre><code>&lt;s:csv process=&quot;@(...)&quot; data-csv-msgname=&quot;...&quot; onfail=&quot;...&quot;/&gt;</code></pre>
  - process points to HTML editable elements or container(s) with editable elements which should be validated. You can define one or multiple @(...) blocks with jQuery selectors inside. The blocks should be separated by blanks. 
 
