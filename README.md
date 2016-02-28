@@ -5,9 +5,9 @@ Handlebars templates http://handlebarsjs.com/, pre-compiled templates for Bootst
 
 Validation messages can be created on failed validation in two ways
 - Within any explicit defined empty container elements, such as <pre><code>&lt;section data-csv-msgname=&quot;...&quot; data-csv-template=&quot;...&quot;&gt;&lt;/section&gt;</code></pre>
- - data-csv-msgname an unique name of the messages container
+ - data-csv-msgname an unique name of the messages container. It is cross-referenced via the same attributes on HTML elements, buttons or links. 
  - data-csv-template - an optional attribut with a name of the pre-defined template
-- Dynamically without explicit defined empty container elements
+- Dynamically without explicit defined empty container elements. See the attribute data-csv-onfail on HTML elements, buttons or links.
 
 ## Custom message templates
 - TBD
