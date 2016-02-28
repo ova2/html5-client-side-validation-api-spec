@@ -38,7 +38,7 @@ All attributes are optional.
 ## Attributes on button / link
 All attributes are optional.
 - data-csv-process
- - It points to HTML editable elements or container(s) with editable elements which should be validated. You can define one or multiple @(...) blocks with jQuery selectors inside. The blocks should be separated by blanks. If this attribute is missing but either data-csv-msgname or data-csv-onfail are present, the closest form will be processed.
+ - It points to HTML editable elements or container(s) with editable elements which should be validated. The value of this attribute should be one or multiple valid CSS selector(s). Multiple selectors should be surrounded by parentheses (...) and separated by blanks. Example: data-csv-process="(div > ul > li) (table tr.selected) (.form-group)" One selector doesn't need to be surrounded by parentheses. If this attribute is missing but either data-csv-msgname or data-csv-onfail are present, the closest form will be processed.
 - data-csv-msgname
  - Message name of the messages container the validation message(s) will be displayed in. This value can be overwritten by the same attributes on HTML elements.
 - data-csv-onfail
