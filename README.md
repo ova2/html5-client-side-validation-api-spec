@@ -18,6 +18,10 @@ All attributes are optional.
  - It represents a converter's id.
 - data-csv-validator
  - It represents a validator's id.
+- data-csv-coptions
+ - Configuration for converter as JSON, e.g. data-csv-coptions={pattern: 'dd.mm.yy'}
+- data-csv-voptions
+ - Configuration for validator as JSON, e.g. data-csv-voptions={minlength: 2, maxlength: 8} 
 - data-csv-msgname
  - Message name of the messages container the validation message(s) will be displayed in
 - data-csv-onfail
@@ -25,6 +29,8 @@ All attributes are optional.
  - parameter: TBD
 - data-csv-valueprovider
  - value provider - script or JS function which returns the value to be validated
+- data-csv-label
+ - label which belongs to the validated value. It can be used in the validation message. See also csv.labelprovider
  
 ## Attributes on button / link
 All attributes are optional.
@@ -40,6 +46,7 @@ All attributes are optional.
 
 ## Standard validators
 - TBD
+- don't forget equals of two fields (cross-field validation). Fields can be referenced by some selectors defined in data-csv-voptions
  
 ## Configuration
  - csv.labelprovider Array of labelproviders. Some default providers (Bootstrap, PrimeUI) are provided. Input: element with data-csv-* Output: Label.
