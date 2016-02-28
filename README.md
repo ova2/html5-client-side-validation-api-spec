@@ -9,6 +9,9 @@ Validation messages can be created on failed validation in two ways
  - data-csv-template - an optional attribut with a name of the pre-defined template
 - Dynamically without explicit defined empty container elements. See the attribute data-csv-onfail on HTML elements, buttons or links.
 
+## Structure of validation messages created by API
+- TBD
+
 ## Custom message templates
 - TBD
 
