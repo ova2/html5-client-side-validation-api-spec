@@ -31,3 +31,6 @@ Validation messages can be created on failed validation in two ways
  
 ## Configuration
  - jcsv.labelprovider Array of labelproviders. Some default providers (Bootstrap, PrimeUI) are provided. Input: element with data-jcsv-* Output: Label.
+ 
+## JS API
+ - jcsv.validate({process: ..., msgname: ..., onfail: ...})
