@@ -31,9 +31,11 @@ All attributes are optional.
  - a script or an JS function which is invoked on failed validation. The function can be used to create a message dynamically
  - parameter: TBD
 - data-csv-valueprovider
- - value provider - script or JS function which returns the value to be validated
+ - value provider - script or JS function which returns the value to be validated. This can be used with custom widgets, such as Select2 or many other, which hide native HTML elements and display fancy UI.
 - data-csv-label
- - label which belongs to the validated value. It can be used in the validation message. See also csv.labelprovider
+ - label which belongs to the validated value. It can be used in the validation message. See also csv.provider.label
+- data-csv-highlighter
+ - script or JS function which highlightes the label of the invalid element and the element itself. Highlighting means e.g. that the label of the invalid element becomes red and the invalid element itself gets red borders. Any custom logic can be implemented. See also csv.provider.highlighter.
  
 ## Attributes on button / link
 All attributes are optional.
@@ -52,7 +54,8 @@ All attributes are optional.
 - don't forget equals of two fields (cross-field validation). Fields can be referenced by some selectors defined in data-csv-voptions
  
 ## Configuration
- - csv.labelprovider Array of labelproviders. Some default providers (Bootstrap, PrimeUI) are provided. Input: element with data-csv-* Output: Label.
+ - csv.provider.label Array of label providers. Some default providers (Bootstrap, PrimeUI) are provided. Input: element with data-csv-* Output: Label.
+ - csv.provider.highlighter Array of highlighter providers. Some default providers (Bootstrap, PrimeUI) are provided. Input: element with data-csv-* Output: no.
  
 ## JS API
  - csv.validate({process: ..., msgname: ..., onfail: ...})
