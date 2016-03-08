@@ -6,7 +6,7 @@ Handlebars templates http://handlebarsjs.com/, pre-compiled templates for Bootst
 Validation messages can be created on failed validation in two ways
 - Within any explicit defined empty container elements, such as <pre><code>&lt;section data-csv-msgname=&quot;...&quot; data-csv-template=&quot;...&quot;&gt;&lt;/section&gt;</code></pre>
  - data-csv-msgname an unique name of the messages container. It is cross-referenced via the same attributes on HTML elements, buttons or links. 
- - data-csv-template - an optional attribut with a name of the pre-defined template
+ - data-csv-template - an optional attribute with a name of the pre-defined template. It is possible to choose either a default template shipped with the implementation or some custom template defined in the application. See csv.provider.template.
 - Dynamically without explicit defined empty container elements. See the attribute data-csv-onfail on HTML elements, buttons or links.
 
 ## Structure of validation messages created by API
@@ -54,8 +54,9 @@ All attributes are optional.
 - don't forget equals of two fields (cross-field validation). Fields can be referenced by some selectors defined in data-csv-voptions
  
 ## Configuration
- - csv.provider.label Array of label providers. Some default providers (Bootstrap, PrimeUI) are provided. Input: element with data-csv-* Output: Label.
- - csv.provider.highlighter Array of highlighter providers. Some default providers (Bootstrap, PrimeUI) are provided. Input: element with data-csv-* Output: no.
+ - csv.provider.label Array of label providers. Implementation can ship some default providers, e.g. for Bootstrap, PrimeUI. Every provider is an JavaScript function with Input: element with data-csv-* Output: Label.
+ - csv.provider.highlighter Array of highlighter providers. Implementation can ship some default providers, e.g. for Bootstrap, PrimeUI. Every provider is an JavaScript function with Input: element with data-csv-* Output: no.
+ - csv.provider.template Array of templates for validation messages. Implementation can ship some default providers, e.g. for Bootstrap, PrimeUI.
  
 ## JS API
  - csv.validate({process: ..., msgname: ..., onfail: ...})
