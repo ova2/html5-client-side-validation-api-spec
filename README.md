@@ -13,7 +13,13 @@ Validation messages can be created on failed validation in two ways
 - Dynamically without explicit defined empty container elements. See the attribute data-csv-onfail on HTML elements, buttons or links.
 
 ## Structure of validation messages created by API
-- TBD
+<pre><code>
+[
+  {severity: 'info', message: '...', optional: ...},
+  {severity: 'warn', message: '...', optional: ...},
+  {severity: 'error', message: '...', optional: ...}
+]
+</code></pre>
 
 ## Custom message templates
 - TBD
@@ -62,8 +68,9 @@ The framework should allow pluggable providers.
  - csv.provider.highlighter Highlighting provider. Implementation can ship some default providers, e.g. for Bootstrap, PrimeUI. A provider is an JavaScript object with two functions: highlight and unhighlight to highlight and unhighlight the label of the invalid element and the element itself. Every function has Input: element with data-csv-* Output: no.
  - csv.provider.template Array of templates for validation messages. Implementation can ship some default providers, e.g. for Bootstrap, PrimeUI.
  
-## JS API
+## JavaScript API
  - csv.validate({process: ..., msgname: ..., onfail: ...})
+ - TBD
 
 ## Technical notes
  - The client-side validation should work in IE9+ and all other browsers.
