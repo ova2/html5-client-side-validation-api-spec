@@ -57,8 +57,9 @@ All attributes are optional.
 - don't forget equals of two fields (cross-field validation). Fields can be referenced by some selectors defined in data-csv-voptions
  
 ## Configuration
+The framework should allow pluggable providers.
  - csv.provider.label Label provider. Implementation can ship some default providers, e.g. for Bootstrap, PrimeUI. A provider is an JavaScript function with Input: element with data-csv-* Output: Label element.
- - csv.provider.highlighter Highlighting providers. Implementation can ship some default providers, e.g. for Bootstrap, PrimeUI. A provider is an JavaScript object with two functions: highlight and unhighlight to highlight and unhighlight the label of the invalid element and the element itself. Every function has Input: element with data-csv-* Output: no.
+ - csv.provider.highlighter Highlighting provider. Implementation can ship some default providers, e.g. for Bootstrap, PrimeUI. A provider is an JavaScript object with two functions: highlight and unhighlight to highlight and unhighlight the label of the invalid element and the element itself. Every function has Input: element with data-csv-* Output: no.
  - csv.provider.template Array of templates for validation messages. Implementation can ship some default providers, e.g. for Bootstrap, PrimeUI.
  
 ## JS API
