@@ -72,6 +72,7 @@ The framework should allow pluggable providers.
  - csv.validate({process: ..., msgname: ..., onfail: ...})
  - TBD
 
-## Technical notes
+## Technical notes (recommendations)
  - The client-side validation should work in IE9+ and all other browsers.
+ - Zero dependencies to large JavaScript libraries such as jQuery.
  - The framework should be completely declatative. That means, also AJAX updates on buttons and links should considered and new added buttons and links should be prepared for triggering validation without developers need to deal with JavaScript code.
