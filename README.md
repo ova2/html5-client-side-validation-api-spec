@@ -28,7 +28,7 @@ All attributes are optional.
 - data-csv-msgname
  - Message name of the messages container the validation message(s) will be displayed in
 - data-csv-onfail
- - a script or an JS function which is invoked on failed validation. The function can be used to create a message dynamically
+ - a script or an JS function which is invoked on failed validation. The function can be used to create and/or show a message dynamically
  - parameter: TBD
 - data-csv-valueprovider
  - value provider - script or JS function which returns the value to be validated. This can be used with custom widgets, such as Select2 or many other, which hide native HTML elements and display fancy UI.
