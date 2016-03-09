@@ -31,7 +31,7 @@ All attributes are optional.
 - data-csv-validator-on..event..
  - Examples: data-csv-validator-onchange, data-csv-validator-onblur. This syntax is used for instant validation, e.g. onchange, onblur, etc. The value is one or multiple validator's id(s). Multiple validator's ids should be defined as array. Multiple validators build a validator chain and get applied one after another. A validator can do a data conversion if it needs a not String object, e.g. Date or Number. The result of the data conversion should be passed to the next validators in the validator chain. See JavaScript API for more details.
 - data-csv-options
- - Configuration for validator as JSON, e.g. data-csv-voptions={pattern: 'dd.mm.yy'} or data-csv-options={minlength: 2, maxlength: 8}. In case of multiple validators, an array of options can be defined in the same order as validators. Example: data-csv-options=[{pattern: 'dd.mm.yy'}, {minlength: 2, maxlength: 8}]. 
+ - Configuration for validator as JSON, e.g. data-csv-options={'pattern': 'dd.mm.yy'} or data-csv-options={'minlength': 2, 'maxlength': 8}. In case of multiple validators, an array of options can be defined in the same order as validators. Example: data-csv-options=[{'pattern': 'dd.mm.yy'}, {'minlength': 2, 'maxlength': 8}]. 
 - data-csv-msgname
  - Message name of the messages container the validation message(s) will be displayed in
 - data-csv-onfail
