@@ -44,7 +44,7 @@ All attributes are optional.
 - data-csv-highlighter
  - JS object with two functions: highlight and unhighlight. These functions highlightes and unhighlightes the label of the invalid element and the element itself. Highlighting means e.g. that the label of the invalid element becomes red and the invalid element itself gets red borders. Any custom logic can be implemented. See also csv.provider.highlighter.
  
-## Attributes on button / link
+## Data attributes on button / link
 All attributes are optional.
 - data-csv-process
  - It points to HTML editable elements or container(s) with editable elements which should be validated. The value of this attribute should be one or multiple valid CSS selector(s). Multiple selectors should be surrounded by parentheses (...) and separated by blanks. Example: data-csv-process="(div > ul > li) (table tr.selected) (.form-group)" One selector doesn't need to be surrounded by parentheses. If this attribute is missing but either data-csv-msgname or data-csv-onfail are present, the closest form will be processed.
