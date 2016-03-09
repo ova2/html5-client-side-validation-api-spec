@@ -26,21 +26,19 @@ Validation messages can be created on failed validation in two ways
 
 ## Data attributes on HTML elements
 All attributes are optional.
-- data-csv-converter
- - It represents a converter's id.
 - data-csv-validator
- - It represents a validator's id.
-- data-csv-coptions
- - Configuration for converter as JSON, e.g. data-csv-coptions={pattern: 'dd.mm.yy'}
-- data-csv-voptions
- - Configuration for validator as JSON, e.g. data-csv-voptions={minlength: 2, maxlength: 8} 
+ - The value is one or multiple validator's id(s). Multiple validator's ids should be space separated. Example: TBD. Multiple validators should be applied one after another. A validator can do a data conversion if it needs a not String object, e.g. Date or Number. The result of the data conversion should be saved in the attribute data-csv-converted for the purpose of reusing. This behavior can be changed per configuration csv.saveconverted.
+- data-csv-validator-on<event>
+ - Examples: data-csv-validator-onchange, data-csv-validator-onblur. This syntax is used for instant validation, e.g. onchange, onblur, etc. The value is one or multiple validator's id(s). Multiple validator's ids should be space separated. Multiple validators should be applied one after another. The result of the data conversion should be saved in the attribute data-csv-converted for the purpose of reusing. This behavior can be changed per configuration csv.saveconverted.
+- data-csv-options
+ - Configuration for validator as JSON, e.g. data-csv-voptions={pattern: 'dd.mm.yy'} or data-csv-options={minlength: 2, maxlength: 8}. In case of multiple validators, an array of options can be defined in the same order as validators. Example: data-csv-options=[{pattern: 'dd.mm.yy'}, {minlength: 2, maxlength: 8}]. 
 - data-csv-msgname
  - Message name of the messages container the validation message(s) will be displayed in
 - data-csv-onfail
  - a script or an JS function which is invoked on failed validation. The function can be used to create and/or show a message dynamically
  - parameter: TBD
 - data-csv-valueprovider
- - value provider - script or JS function which returns the value to be validated. This can be used with custom widgets, such as Select2 or many other, which hide native HTML elements and display fancy UI.
+ - value provider - script or JS function which returns the value to be validated. This can be used with custom widgets, such as Select2 or many other, which hide native HTML elements and display fancy UI. See also the configuration csv.provider.value.
 - data-csv-label
  - label which belongs to the validated value. It can be used in the validation message. See also csv.provider.label
 - data-csv-highlighter
@@ -65,6 +63,7 @@ All attributes are optional.
 ## Configuration
 The framework should allow pluggable providers.
  - csv.provider.label Label provider. Implementation can ship some default providers, e.g. for Bootstrap, PrimeUI. A provider is an JavaScript function with Input: element with data-csv-* Output: Label element.
+ - csv.provider.value Generic value provider. Implementation can ship some default providers, e.g. for Bootstrap, PrimeUI. A provider is an JavaScript function with Input: element with data-csv-* Output: value to be validated.
  - csv.provider.highlighter Highlighting provider. Implementation can ship some default providers, e.g. for Bootstrap, PrimeUI. A provider is an JavaScript object with two functions: highlight and unhighlight to highlight and unhighlight the label of the invalid element and the element itself. Every function has Input: element with data-csv-* Output: no.
  - csv.provider.template Array of templates for validation messages. Implementation can ship some default providers, e.g. for Bootstrap, PrimeUI.
  
@@ -74,5 +73,4 @@ The framework should allow pluggable providers.
 
 ## Technical notes (recommendations)
  - The client-side validation should work in IE9+ and all other browsers.
- - Zero dependencies to large JavaScript libraries such as jQuery.
- - The framework should be completely declatative. That means, also AJAX updates on buttons and links should considered and new added buttons and links should be prepared for triggering validation without developers need to deal with JavaScript code.
+ - The framework should be completely declatative. The framework observers DOM nodes insertion. That means, also AJAX updates on elements, buttons and links should considered and new added elements, buttons and links should be prepared for triggering validation without developers need to deal with JavaScript code.
