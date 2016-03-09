@@ -27,9 +27,9 @@ Validation messages can be created on failed validation in two ways
 ## Data attributes on HTML elements
 All attributes are optional.
 - data-csv-validator
- - The value is one or multiple validator's id(s). Multiple validator's ids should be space separated. Example: TBD. Multiple validators should be applied one after another. A validator can do a data conversion if it needs a not String object, e.g. Date or Number. The result of the data conversion should be saved in the attribute data-csv-converted for the purpose of reusing. This behavior can be changed per configuration csv.saveconverted.
-- data-csv-validator-on<event>
- - Examples: data-csv-validator-onchange, data-csv-validator-onblur. This syntax is used for instant validation, e.g. onchange, onblur, etc. The value is one or multiple validator's id(s). Multiple validator's ids should be space separated. Multiple validators should be applied one after another. The result of the data conversion should be saved in the attribute data-csv-converted for the purpose of reusing. This behavior can be changed per configuration csv.saveconverted.
+ - The value is one or multiple validator's id(s). Multiple validator's ids should be space separated. Example: TBD. Multiple validators should be applied one after another. A validator can do a data conversion if it needs a not String object, e.g. Date or Number. The result of the data conversion should be passed to the next validators in the validator chain. See JavaScript API for more details.
+- data-csv-validator-on..event..
+ - Examples: data-csv-validator-onchange, data-csv-validator-onblur. This syntax is used for instant validation, e.g. onchange, onblur, etc. The value is one or multiple validator's id(s). Multiple validator's ids should be space separated. Multiple validators should be applied one after another. A validator can do a data conversion if it needs a not String object, e.g. Date or Number. The result of the data conversion should be passed to the next validators in the validator chain. See JavaScript API for more details.
 - data-csv-options
  - Configuration for validator as JSON, e.g. data-csv-voptions={pattern: 'dd.mm.yy'} or data-csv-options={minlength: 2, maxlength: 8}. In case of multiple validators, an array of options can be defined in the same order as validators. Example: data-csv-options=[{pattern: 'dd.mm.yy'}, {minlength: 2, maxlength: 8}]. 
 - data-csv-msgname
