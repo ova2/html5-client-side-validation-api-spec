@@ -4,22 +4,28 @@
 - TBD, declarative, etc.
 
 ## Validation messages
-Handlebars templates http://handlebarsjs.com/, pre-compiled templates for Bootstrap messages, PrimeUI messages, AlertifyJS, and some other
+Handlebars templates http://handlebarsjs.com/, pre-compiled templates for <tt>Bootstrap</tt> messages,
+<tt>PrimeUI</tt> messages, <tt>AlertifyJS</tt>, and some other
 
 Validation messages can be created on failed validation in two ways
-- Within any explicit defined empty container elements, such as <pre><code>&lt;section data-csv-msgname=&quot;...&quot; data-csv-template=&quot;...&quot;&gt;&lt;/section&gt;</code></pre>
- - data-csv-msgname an unique name of the messages container. It is cross-referenced via the same attributes on HTML elements, buttons or links. 
- - data-csv-template - an optional attribute with a name of the pre-defined template. It is possible to choose either a default template shipped with the implementation or some custom template defined in the application. See csv.provider.template.
-- Dynamically without explicit defined empty container elements. See the attribute data-csv-onfail on HTML elements, buttons or links.
+* Within any explicit defined empty container elements, such as
+
+<pre>
+<section data-csv-msgname="..." data-csv-template="..."></section>
+</pre>
+
+ * data-csv-msgname an unique name of the messages container. It is cross-referenced via the same attributes on HTML elements, buttons or links. 
+ * data-csv-template - an optional attribute with a name of the pre-defined template. It is possible to choose either a default template shipped with the implementation or some custom template defined in the application. See csv.provider.template.
+* Dynamically without explicit defined empty container elements. See the attribute data-csv-onfail on HTML elements, buttons or links.
 
 ## Structure of validation messages created by API
-<pre><code>
+<pre>
 [
   {severity: 'info', message: '...', optional: ...},
   {severity: 'warn', message: '...', optional: ...},
   {severity: 'error', message: '...', optional: ...}
 ]
-</code></pre>
+</pre>
 
 ## Custom message templates
 - TBD
