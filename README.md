@@ -25,7 +25,7 @@ Validation messages can be created on failed validation in two ways
   {severity: 'warn', message: '...', optional: ...},
   {severity: 'error', message: '...', optional: ...}
 ]
-```html
+```
 
 ## Custom message templates
 - TBD
