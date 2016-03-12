@@ -21,9 +21,9 @@ Validation messages can be created on failed validation in two ways
 ## Structure of validation messages created by API
 ```json
 [
-  {severity: 'info', message: '...', optional: ...},
-  {severity: 'warn', message: '...', optional: ...},
-  {severity: 'error', message: '...', optional: ...}
+  {"severity": 'info', "message": '...', optional: '...'},
+  {"severity": 'warn', "message": '...', optional: '...'},
+  {"severity": 'error', "message": '...', optional: '...'}
 ]
 ```
 
