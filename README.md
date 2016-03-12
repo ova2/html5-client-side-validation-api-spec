@@ -10,7 +10,7 @@ Handlebars templates http://handlebarsjs.com/, pre-compiled templates for <tt>Bo
 Validation messages can be created on failed validation in two ways
 * Within any explicit defined empty container elements, such as
 
-```
+```html
 <section data-csv-msgname="..." data-csv-template="..."></section>
 ```
 
