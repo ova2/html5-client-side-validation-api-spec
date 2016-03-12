@@ -4,19 +4,17 @@
 - TBD, declarative, etc.
 
 ## Validation messages
-Handlebars templates http://handlebarsjs.com/, pre-compiled templates for <tt>Bootstrap</tt> messages,
-<tt>PrimeUI</tt> messages, <tt>AlertifyJS</tt>, and some other
+Handlebars templates http://handlebarsjs.com/, pre-compiled templates for `Bootstrap` messages,
+`PrimeUI` messages, `AlertifyJS`, and some other
 
 Validation messages can be created on failed validation in two ways
 * Within any explicit defined empty container elements, such as
-
-```html
-<section data-csv-msgname="..." data-csv-template="..."></section>
-```
-
-    * data-csv-msgname an unique name of the messages container. It is cross-referenced via the same attributes on HTML elements, buttons or links. 
-    * data-csv-template - an optional attribute with a name of the pre-defined template. It is possible to choose either a default template shipped with the implementation or some custom template defined in the application. See csv.provider.template.
-* Dynamically without explicit defined empty container elements. See the attribute data-csv-onfail on HTML elements, buttons or links.
+  ```html
+  <section data-csv-msgname="..." data-csv-template="..."></section>
+  ```
+  - `data-csv-msgname` ia an unique name of the messages container. It is cross-referenced via the same attributes on HTML elements, buttons or links. 
+  - `data-csv-template` is an optional attribute with a name of the pre-defined template. It is possible to choose either a default template shipped with the implementation or some custom template defined in the application. See `csv.provider.template`.
+* Dynamically without explicit defined empty container elements. See the attribute `data-csv-onfail` on HTML elements, buttons or links.
 
 ## Structure of validation messages created by API
 ```js
@@ -32,10 +30,12 @@ Validation messages can be created on failed validation in two ways
 
 ## Data attributes on HTML elements
 All attributes are optional.
-- data-csv-validator
- - The value is one or multiple validator's id(s). Multiple validator's ids should be defined as array. Example: data-csv-validator=['csv.validator.dateTime', 'ch.sbb.validator.birthday']. Multiple validators build a validator chain and get applied one after another. A validator can do a data conversion if it needs a not String object, e.g. Date or Number. The result of the data conversion should be passed to the next validators in the validator chain. See JavaScript API for more details.
-- data-csv-validator-on..event..
- - Examples: data-csv-validator-onchange, data-csv-validator-onblur. This syntax is used for instant validation, e.g. onchange, onblur, etc. The value is one or multiple validator's id(s). Multiple validator's ids should be defined as array. Multiple validators build a validator chain and get applied one after another. A validator can do a data conversion if it needs a not String object, e.g. Date or Number. The result of the data conversion should be passed to the next validators in the validator chain. See JavaScript API for more details.
+* `data-csv-converter`
+  - The value is one or multiple converter's id(s). Multiple converter's ids should be defined as array. Example: `data-csv-converter=['ch.sbb.converter.DateTime', 'ch.sbb.converter.LocalDate']`. A converter does a data conversion, e.g. from input `String` to `Date` or `Number`. The result of the data conversion should be passed to the next converter in the converter chain or to the validator chain if the last converter finished the conversion. See JavaScript API for more details.
+* `data-csv-validator`
+  - The value is one or multiple validator's id(s). Multiple validator's ids should be defined as array. Example: `data-csv-validator=['ch.sbb.validator.Birthday', 'ch.sbb.validator.Range']`. Multiple validators build a validator chain and get applied one after another. See JavaScript API for more details.
+* `data-csv-validator-on<event>`
+  - Examples: `data-csv-validator-onchange`, `data-csv-validator-onblur`. This syntax is used for instant validation, e.g. `onchange`, `onblur`, etc. The value is one or multiple validator's id(s). Multiple validator's ids should be defined as array. Multiple validators build a validator chain and get applied one after another. A validator can do a data conversion if it needs a not String object, e.g. Date or Number. The result of the data conversion should be passed to the next validators in the validator chain. See JavaScript API for more details.
 - data-csv-options
  - Configuration for validator as JSON, e.g. data-csv-options={'pattern': 'dd.mm.yy'} or data-csv-options={'minlength': 2, 'maxlength': 8}. In case of multiple validators, an array of options can be defined in the same order as validators. Example: data-csv-options=[{'pattern': 'dd.mm.yy'}, {'minlength': 2, 'maxlength': 8}]. 
 - data-csv-msgname
