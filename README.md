@@ -19,13 +19,13 @@ Validation messages can be created on failed validation in two ways
 * Dynamically without explicit defined empty container elements. See the attribute data-csv-onfail on HTML elements, buttons or links.
 
 ## Structure of validation messages created by API
-<pre>
+```json
 [
   {severity: 'info', message: '...', optional: ...},
   {severity: 'warn', message: '...', optional: ...},
   {severity: 'error', message: '...', optional: ...}
 ]
-</pre>
+```html
 
 ## Custom message templates
 - TBD
