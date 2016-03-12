@@ -10,9 +10,9 @@ Handlebars templates http://handlebarsjs.com/, pre-compiled templates for `Boots
 Validation messages can be created on failed validation in two ways
 * Within any explicit defined empty container elements, such as
 
-```html
-<section data-csv-msgname="..." data-csv-template="..."></section>
-```
+    ```html
+    <section data-csv-msgname="..." data-csv-template="..."></section>
+    ```
   
   - `data-csv-msgname` ia an unique name of the messages container. It is cross-referenced via the same attributes on HTML elements, buttons or links. 
   - `data-csv-template` is an optional attribute with a name of the pre-defined template. It is possible to choose either a default template shipped with the implementation or some custom template defined in the application. See `csv.provider.template`.
